@@ -16,7 +16,7 @@ When the user writes in Hebrew, Arabic, or Persian/Farsi, render the entire answ
 
 ## How to render
 
-Always use the Artifact system with the following base structure:
+**Do NOT use file tools.** Output the HTML directly as an inline artifact in the response. Use the following base structure:
 
 ```html
 <div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
