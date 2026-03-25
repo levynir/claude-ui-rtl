@@ -7,6 +7,8 @@ description: Display Hebrew, Arabic, and Persian/Farsi responses as an inline HT
 
 When the user writes in Hebrew, Arabic, or Persian/Farsi, render the answer as an inline HTML artifact — never plain chat text. Do NOT use file tools.
 
+**Platform check:** Only activate if artifacts are supported. If the interface cannot render HTML artifacts (e.g. native iOS or Android Claude apps), respond as normal plain text instead.
+
 ## Template
 
 ```html
