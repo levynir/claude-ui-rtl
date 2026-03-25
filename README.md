@@ -8,7 +8,7 @@ Hebrew, Arabic, and Persian/Farsi.
 
 ## Installation
 
-1. Download [`SKILL.md`](https://raw.githubusercontent.com/levynir/claude-ui-rtl/main/SKILL.md) (right-click → Save Link As)
+1. Download [`SKILL.md`](https://raw.githubusercontent.com/levynir/claude-ui-rtl/main/SKILL.md) (right-click → Save Link As — make sure to save with `.md` extension)
 2. Open Claude (desktop or web)
 3. Go to **Customize → Upload Skill**
 4. Select the file
