@@ -22,7 +22,7 @@ Any RTL language is automatically detected and rendered correctly, including:
 
 ## Installation
 
-1. Download [`rtl.skill`](https://raw.githubusercontent.com/levynir/claude-ui-rtl/main/rtl.skill)
+1. Download [`SKILL.md`](https://raw.githubusercontent.com/levynir/claude-ui-rtl/main/SKILL.md) (right-click → Save Link As)
 2. Open Claude (desktop or web)
 3. Go to **Customize → Upload Skill**
 4. Select the file
@@ -76,4 +76,4 @@ The skill automatically selects the appropriate layout based on content:
 
 | File | Description |
 |---|---|
-| `rtl.skill` | The installable skill (ZIP archive containing `SKILL.md`) |
+| `SKILL.md` | The installable skill file |
