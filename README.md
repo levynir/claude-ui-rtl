@@ -1,6 +1,6 @@
 # Claude RTL Skill
 
-A Claude UI (claude.ai) skill that renders responses in right-to-left (RTL) languages inside a properly formatted HTML widget, instead of plain left-to-right chat text.
+A Claude UI (claude.ai) skill that renders responses in right-to-left (RTL) languages inside a properly formatted HTML widget, instead of plain left-to-right chat text. This is only relevant for claude desktop apps (Mac/Windows) and web versions. Android/iOS do not allow embedded HTML widgets inline.
 
 ## Supported languages
 
