@@ -25,16 +25,6 @@ The skill triggers **automatically** whenever your message contains RTL-script c
 
 Simply write in any RTL language and Claude will render the response in an RTL widget:
 
-```
-מה זה בינה מלאכותית?
-```
-```
-ما هو الذكاء الاصطناعي؟
-```
-```
-هوش مصنوعی چیست؟
-```
-
 **Without the skill:**
 
 ![Without skill](assets/without-skill.png)
