@@ -25,7 +25,7 @@ Any RTL language is automatically detected and rendered correctly, including:
 1. Open Claude Code and paste this prompt:
 
 ```
-Please download https://github.com/levynir/claude-ui-rtl/raw/main/rtl.skill and install it into my global Claude skills folder (~/.claude/skills/), creating the folder if it doesn't exist.
+Please download https://cdn.jsdelivr.net/gh/levynir/claude-ui-rtl@main/rtl.skill and install it into my global Claude skills folder (~/.claude/skills/), creating the folder if it doesn't exist.
 ```
 
 2. Send — Claude will handle the rest
