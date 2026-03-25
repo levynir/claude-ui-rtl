@@ -4,21 +4,7 @@ A Claude Code skill that renders responses in right-to-left (RTL) languages insi
 
 ## Supported languages
 
-Any RTL language is automatically detected and rendered correctly, including:
-
-| Language | Script |
-|---|---|
-| Hebrew | Hebrew |
-| Arabic | Arabic |
-| Persian / Farsi | Perso-Arabic |
-| Urdu | Perso-Arabic (Nastaliq) |
-| Yiddish | Hebrew |
-| Pashto | Perso-Arabic |
-| Kurdish (Sorani) | Perso-Arabic |
-| Sindhi | Perso-Arabic |
-| Uyghur | Perso-Arabic |
-| Syriac | Syriac |
-| Dhivehi | Thaana |
+Hebrew, Arabic, and Persian/Farsi.
 
 ## Installation
 
