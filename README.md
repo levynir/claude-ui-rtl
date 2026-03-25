@@ -1,6 +1,6 @@
 # Claude RTL Skill
 
-A Claude Code skill that renders responses in right-to-left (RTL) languages inside a properly formatted HTML widget, instead of plain left-to-right chat text.
+A Claude UI (claude.ai) skill that renders responses in right-to-left (RTL) languages inside a properly formatted HTML widget, instead of plain left-to-right chat text.
 
 ## Supported languages
 
