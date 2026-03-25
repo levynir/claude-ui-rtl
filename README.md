@@ -20,15 +20,15 @@ Any RTL language is automatically detected and rendered correctly, including:
 | Syriac | Syriac |
 | Dhivehi | Thaana |
 
-## Installation
+## Installation (Mac)
 
-1. Open Claude Code and paste this prompt:
+1. Open Terminal
+2. Run:
 
+```bash
+mkdir -p ~/.claude/skills/
+curl -L "https://cdn.jsdelivr.net/gh/levynir/claude-ui-rtl@main/rtl.skill" -o ~/.claude/skills/rtl.skill
 ```
-Please download https://cdn.jsdelivr.net/gh/levynir/claude-ui-rtl@main/rtl.skill and install it into my global Claude skills folder (~/.claude/skills/), creating the folder if it doesn't exist.
-```
-
-2. Send — Claude will handle the rest
 
 ## Usage
 
