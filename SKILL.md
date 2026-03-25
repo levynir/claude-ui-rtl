@@ -1,51 +1,21 @@
 ---
-name: rtl
-description: Display RTL-language responses (Hebrew, Arabic, Persian/Farsi, Urdu, and any other right-to-left language) inside an HTML Artifact with proper RTL layout. Use this skill whenever the user writes in any RTL language, asks a question in an RTL language, or when the response should be in an RTL language. ALWAYS trigger this skill for any RTL-language interaction — even simple greetings, short answers, or factual questions. Never respond in plain chat when the language is RTL; always render the answer in a right-to-left HTML widget.
+name: hebrew
+description: Display Hebrew responses inside an HTML Artifact with proper RTL layout. Use this skill whenever the user writes in Hebrew or asks a question in Hebrew. Always render the answer in a right-to-left HTML widget — never respond in plain chat.
 ---
 
-# RTL Language Responses
+# Hebrew Responses
 
-When the user writes in any RTL language or the response should be in an RTL language, render the entire answer inside an HTML Artifact using `direction: rtl` and `text-align: right`.
-
-## RTL languages covered
-
-This skill applies to **all right-to-left languages**, including but not limited to:
-
-| Language | Script | Example |
-|---|---|---|
-| Hebrew | Hebrew | עברית |
-| Arabic | Arabic | العربية |
-| Persian / Farsi | Arabic (Perso-Arabic) | فارسی |
-| Urdu | Arabic (Nastaliq) | اردو |
-| Yiddish | Hebrew | ייִדיש |
-| Pashto | Arabic | پښتو |
-| Kurdish (Sorani) | Arabic | کوردی |
-| Sindhi | Arabic | سنڌي |
-| Uyghur | Arabic | ئۇيغۇرچە |
-| Syriac | Syriac | ܣܘܪܝܬ |
-| Dhivehi | Thaana | ދިވެހި |
-| Azerbaijani (historical) | Arabic | آذربایجانجا |
+When the user writes in Hebrew or the response should be in Hebrew, render the entire answer inside an HTML Artifact using `direction: rtl` and `text-align: right`.
 
 ## When to trigger
 
-- User message contains any RTL-script characters
-- User asks to respond in any RTL language
-- User explicitly invokes `/rtl`
-- Any context where the output language is RTL
-
-## How to detect RTL
-
-A message is RTL if it contains Unicode characters in these ranges:
-- **Hebrew:** U+0590–U+05FF
-- **Arabic / Perso-Arabic / Urdu:** U+0600–U+06FF, U+0750–U+077F, U+08A0–U+08FF
-- **Arabic Supplement / Extended:** U+FB50–U+FDFF, U+FE70–U+FEFF
-- **Syriac:** U+0700–U+074F
-- **Thaana (Dhivehi):** U+0780–U+07BF
-- **N'Ko:** U+07C0–U+07FF
+- User message contains Hebrew characters (U+0590–U+05FF)
+- User asks to respond in Hebrew
+- User explicitly invokes `/hebrew`
 
 ## How to render
 
-Always use `visualize:show_widget` (or the Artifact system) with the following base structure:
+Always use the Artifact system with the following base structure:
 
 ```html
 <div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
@@ -61,7 +31,7 @@ Use the minimal layout that fits the content:
 ```html
 <div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
   <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0;">
-    התשובה כאן. / الجواب هنا. / پاسخ اینجاست.
+    התשובה כאן.
   </p>
 </div>
 ```
@@ -69,35 +39,28 @@ Use the minimal layout that fits the content:
 **Prose / explanation (multiple paragraphs):**
 ```html
 <div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
-  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0 0 1rem;">פסקה ראשונה... / الفقرة الأولى...</p>
-  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0;">פסקה שנייה... / الفقرة الثانية...</p>
+  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0 0 1rem;">פסקה ראשונה...</p>
+  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0;">פסקה שנייה...</p>
 </div>
 ```
 
 **List / bullet points:**
 ```html
 <div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
-  <ul style="padding-right: 1.25rem; padding-left: 0; margin: 0; font-size: 15px; color: var(--color-text-primary); line-height: 1.9;">
-    <li>פריט א׳ / العنصر الأول / مورد اول</li>
-    <li>פריט ב׳ / العنصر الثاني / مورد دوم</li>
-    <li>פריט ג׳ / العنصر الثالث / مورد سوم</li>
+  <ul style="padding-right: 1.25rem; padding-left: 0; margin: 0; font-size: 15px; color: var(--color-text-primary); line-height: 1.7;">
+    <li>פריט א׳</li>
+    <li>פריט ב׳</li>
+    <li>פריט ג׳</li>
   </ul>
 </div>
 ```
 
 **Section headings:**
 ```html
-<h2 style="font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 0.75rem; border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 8px;">כותרת / عنوان / عنوان</h2>
+<h2 style="font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 0.75rem; border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 8px;">כותרת</h2>
 ```
 
-**Cards (for structured data / comparisons):**
-```html
-<div style="background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 12px;">
-  <p style="margin: 0; font-size: 15px; color: var(--color-text-primary); line-height: 1.7;">תוכן הכרטיס / محتوى البطاقة / محتوای کارت</p>
-</div>
-```
-
-**Mixed RTL + LTR content** (e.g. code, numbers, proper nouns in Latin script):
+**Mixed Hebrew + LTR content** (e.g. code, numbers, proper nouns in Latin script):
 ```html
 <div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
   <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0;">
@@ -112,12 +75,12 @@ Use the minimal layout that fits the content:
 - Use `padding-right` instead of `padding-left` for indentation
 - For inline LTR segments (code, URLs, numbers), wrap in `<span style="direction: ltr; display: inline-block;">`
 - Never hardcode colors — always use CSS variables (`var(--color-text-primary)`, etc.)
-- Use `font-weight: 500` for headings, `400` for body — never 600 or 700
+- Use `font-weight: 500` for headings, `400` for body
 - No gradients, shadows, or decorative effects
 - Keep background transparent on the outer container
-- Line height should be at least `1.7` — Arabic and Persian scripts need more vertical space than Latin
+- Line height: at least `1.7`
 
-## Example: Hebrew
+## Example
 
 User asks: "מה זה בינה מלאכותית?"
 
@@ -128,36 +91,6 @@ User asks: "מה זה בינה מלאכותית?"
   </p>
   <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0;">
     דוגמאות נפוצות: עוזרי קול, מנועי המלצות, רכבים אוטונומיים ומודלי שפה גדולים כמו קלוד.
-  </p>
-</div>
-```
-
-## Example: Arabic
-
-User asks: "ما هو الذكاء الاصطناعي؟"
-
-```html
-<div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
-  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.9; margin: 0 0 1rem;">
-    الذكاء الاصطناعي (AI) هو مجال في علوم الحاسوب يُعنى ببناء أنظمة قادرة على أداء مهام تتطلب عادةً الذكاء البشري — مثل التعرف على الصور، وفهم اللغة، واتخاذ القرارات، والتعلم من التجربة.
-  </p>
-  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.9; margin: 0;">
-    أمثلة شائعة: المساعدون الصوتيون، ومحركات التوصيات، والسيارات ذاتية القيادة، ونماذج اللغة الكبيرة مثل كلود.
-  </p>
-</div>
-```
-
-## Example: Persian / Farsi
-
-User asks: "هوش مصنوعی چیست؟"
-
-```html
-<div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
-  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.9; margin: 0 0 1rem;">
-    هوش مصنوعی (AI) شاخه‌ای از علوم کامپیوتر است که به ساخت سیستم‌هایی می‌پردازد که قادر به انجام وظایفی هستند که معمولاً به هوش انسانی نیاز دارند — مانند تشخیص تصویر، درک زبان، تصمیم‌گیری و یادگیری از تجربه.
-  </p>
-  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.9; margin: 0;">
-    نمونه‌های رایج: دستیارهای صوتی، موتورهای توصیه، خودروهای خودران و مدل‌های زبانی بزرگ مانند Claude.
   </p>
 </div>
 ```
