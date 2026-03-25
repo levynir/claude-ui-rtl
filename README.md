@@ -30,6 +30,16 @@ mkdir -p ~/.claude/skills/
 curl -L "https://cdn.jsdelivr.net/gh/levynir/claude-ui-rtl@main/rtl.skill" -o ~/.claude/skills/rtl.skill
 ```
 
+## Installation (Windows)
+
+1. Press **Win + R**, type `powershell`, and press Enter
+2. Paste the following and press Enter:
+
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills" | Out-Null
+Invoke-WebRequest -Uri "https://cdn.jsdelivr.net/gh/levynir/claude-ui-rtl@main/rtl.skill" -OutFile "$env:USERPROFILE\.claude\skills\rtl.skill"
+```
+
 ## Usage
 
 The skill triggers **automatically** whenever your message contains RTL-script characters. You can also invoke it explicitly:
