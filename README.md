@@ -35,6 +35,14 @@ Simply write in any RTL language and Claude will render the response in an RTL w
 هوش مصنوعی چیست؟
 ```
 
+**Without the skill:**
+
+![Without skill](assets/without-skill.png)
+
+**With the skill:**
+
+![With skill](assets/with-skill.png)
+
 ## How it works
 
 When triggered, Claude renders the response inside an HTML Artifact with:
