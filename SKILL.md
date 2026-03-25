@@ -1,17 +1,18 @@
 ---
-name: hebrew
-description: Display Hebrew responses inside an HTML Artifact with proper RTL layout. Use this skill whenever the user writes in Hebrew or asks a question in Hebrew. Always render the answer in a right-to-left HTML widget — never respond in plain chat.
+name: rtl
+description: Display Hebrew, Arabic, and Persian/Farsi responses inside an HTML Artifact with proper RTL layout. Use this skill whenever the user writes in Hebrew, Arabic, or Persian/Farsi. Always render the answer in a right-to-left HTML widget — never respond in plain chat.
 ---
 
-# Hebrew Responses
+# RTL Language Responses
 
-When the user writes in Hebrew or the response should be in Hebrew, render the entire answer inside an HTML Artifact using `direction: rtl` and `text-align: right`.
+When the user writes in Hebrew, Arabic, or Persian/Farsi, render the entire answer inside an HTML Artifact using `direction: rtl` and `text-align: right`.
 
 ## When to trigger
 
 - User message contains Hebrew characters (U+0590–U+05FF)
-- User asks to respond in Hebrew
-- User explicitly invokes `/hebrew`
+- User message contains Arabic/Perso-Arabic characters (U+0600–U+06FF, U+FB50–U+FDFF, U+FE70–U+FEFF)
+- User asks to respond in Hebrew, Arabic, or Persian/Farsi
+- User explicitly invokes `/rtl`
 
 ## How to render
 
@@ -78,19 +79,4 @@ Use the minimal layout that fits the content:
 - Use `font-weight: 500` for headings, `400` for body
 - No gradients, shadows, or decorative effects
 - Keep background transparent on the outer container
-- Line height: at least `1.7`
-
-## Example
-
-User asks: "מה זה בינה מלאכותית?"
-
-```html
-<div style="direction: rtl; text-align: right; font-family: var(--font-sans); padding: 1rem 0;">
-  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0 0 1rem;">
-    בינה מלאכותית (AI) היא תחום במדעי המחשב העוסק בבניית מערכות המסוגלות לבצע משימות הדורשות בדרך כלל אינטליגנציה אנושית — כגון זיהוי תמונות, הבנת שפה, קבלת החלטות ולמידה מניסיון.
-  </p>
-  <p style="font-size: 15px; color: var(--color-text-primary); line-height: 1.7; margin: 0;">
-    דוגמאות נפוצות: עוזרי קול, מנועי המלצות, רכבים אוטונומיים ומודלי שפה גדולים כמו קלוד.
-  </p>
-</div>
-```
+- Line height: at least `1.7` for Hebrew, at least `1.9` for Arabic and Persian/Farsi
